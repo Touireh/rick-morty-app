@@ -17,7 +17,7 @@ export default function FloatingFavoritesButton() {
                             {favorites.length}
                         </span>
                 )}
-                <span>Favorites</span>
+                <span className='hidden lg:block'>Favorites</span>
             </div>
         </Link>
     )
