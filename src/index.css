@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .input-field {
+    @apply w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-rick-blue;
+  }
+  
+  .badge {
+    @apply px-2 py-1 rounded-full text-xs font-semibold text-white;
+  }
+}
