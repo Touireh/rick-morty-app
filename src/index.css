@@ -4,7 +4,7 @@
 
 @layer components {
   .input-field {
-    @apply w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-rick-blue;
+    @apply w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-rick-blue transition-all;
   }
   
   .badge {

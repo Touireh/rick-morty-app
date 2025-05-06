@@ -3,6 +3,7 @@ import Characters from './pages/Characters';
 import CharacterDetail from './pages/Detail';
 import Favorites from './pages/Favorites';
 import { FavoritesProvider } from './contexts/FavoritesContext';
+import FloatingFavoritesButton from './components/FloatingFavoritesButton';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="/character/:id" element={<CharacterDetail />} />
           <Route path="/favorites" element={<Favorites />} />
         </Routes>
+        <FloatingFavoritesButton />
       </BrowserRouter>
     </FavoritesProvider>
   );

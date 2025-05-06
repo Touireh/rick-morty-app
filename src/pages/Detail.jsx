@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams} from 'react-router-dom'
 import axios from 'axios'
-import { ArrowLeftIcon, FilmIcon } from '@heroicons/react/24/outline'
+import BackButton from '../components/BackButton'
 
 export default function CharacterDetail() {
   const { id } = useParams()
@@ -29,11 +29,7 @@ export default function CharacterDetail() {
 
   return (
     <div className="max-w-4xl m-auto p-4 ">
-      <Link to="/" className="inline-flex items-center mb-6 text-rick-blue hover:text-opacity-80 border-none">
-        <ArrowLeftIcon className="w-5 h-5 mr-2" />
-        Back to Characters
-      </Link>
-
+      <BackButton/>
       <div className="bg-white rounded-xl shadow-lg overflow-hidden flex justify-center ">
         <div className="md:flex">
           <div className="md:w-1/3">

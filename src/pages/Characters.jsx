@@ -18,7 +18,13 @@ export default function Characters() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const params = { ...filters, page };
+        const params = {
+            page,
+            name: filters.name,
+            status: filters.status,
+            species: filters.species,
+            gender: filters.gender
+          };
       const response = await axios.get('https://rickandmortyapi.com/api/character', { params });
       console.log(response.data);
       setData(response.data);
@@ -30,7 +36,6 @@ export default function Characters() {
   return (
     <div className="container mx-auto px-4 py-8">
       <Filters filters={filters} setFilters={setFilters} />
-
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8">
         {data.results.map(character => (
           <CharacterCard key={character.id} character={character} />
