@@ -1,3 +1,8 @@
+/**
+ * Filters Component
+ * @description Provides filter controls for character search and filtering
+ * @returns {JSX.Element} A form with filter controls
+ */
 export default function Filters({ filters, setFilters }) {
     const handleChange = (e) => {
       setFilters(prev => ({
@@ -5,7 +10,9 @@ export default function Filters({ filters, setFilters }) {
         [e.target.name]: e.target.value
       }))
     }
-  
+   /**
+   * Resets all filters to their default values
+   */
     const resetFilters = () => {
       setFilters({
         name: '',

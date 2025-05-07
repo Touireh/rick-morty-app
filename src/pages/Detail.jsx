@@ -1,8 +1,14 @@
 import { useEffect, useState } from 'react'
 import { useParams} from 'react-router-dom'
 import axios from 'axios'
-import BackButton from '../components/BackButton'
+import BackButton from '../components/common/BackButton'
+import { API_BASE_URL } from '../constants';
 
+/**
+ * CharacterDetail Page Component
+ * @description Displays detailed information about a specific character
+ * @returns {JSX.Element} Detailed view of a character
+ */
 export default function CharacterDetail() {
   const { id } = useParams()
   const [character, setCharacter] = useState(null)
@@ -12,7 +18,7 @@ export default function CharacterDetail() {
     const fetchData = async () => {
       try {
         const characterResponse = await axios.get(
-          `https://rickandmortyapi.com/api/character/${id}`
+          `${API_BASE_URL}/character/${id}`
         )
         setCharacter(characterResponse.data)
       } catch (error) {

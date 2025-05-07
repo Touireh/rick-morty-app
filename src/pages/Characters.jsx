@@ -1,10 +1,15 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
 import CharacterCard from '../components/CharacterCard';
 import Filters from '../components/Filters';
 import Pagination from '../components/Pagination';
+import { API_BASE_URL } from '../constants';
 
+/**
+ * Characters Page Component
+ * @description Main page displaying a grid of Rick & Morty characters with filtering and pagination
+ * @returns {JSX.Element} Characters listing page with filters and pagination
+ */
 export default function Characters() {
   const [data, setData] = useState({ info: {}, results: [] });
   const [page, setPage] = useState(1);
@@ -14,8 +19,6 @@ export default function Characters() {
     species: '',
     gender: ''
   });
-  const navigate = useNavigate();
-
   useEffect(() => {
     const fetchData = async () => {
         const params = {
@@ -25,8 +28,7 @@ export default function Characters() {
             species: filters.species,
             gender: filters.gender
           };
-      const response = await axios.get('https://rickandmortyapi.com/api/character', { params });
-      console.log(response.data);
+      const response = await axios.get(`${API_BASE_URL}/character`, { params });
       setData(response.data);
     };
     

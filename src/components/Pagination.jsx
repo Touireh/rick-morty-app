@@ -1,5 +1,9 @@
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
-
+/**
+ * Pagination Component
+ * @description Provides navigation controls for paginated content
+ * @returns {JSX.Element} Navigation controls for pagination
+ */
 export default function Pagination({ currentPage, totalPages, onPageChange }) {
   const canGoPrev = currentPage > 1
   const canGoNext = currentPage < totalPages

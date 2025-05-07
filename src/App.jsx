@@ -3,7 +3,7 @@ import Characters from './pages/Characters';
 import CharacterDetail from './pages/Detail';
 import Favorites from './pages/Favorites';
 import { FavoritesProvider } from './contexts/FavoritesContext';
-import FloatingFavoritesButton from './components/FloatingFavoritesButton';
+import FloatingFavoritesButton from './components/common/FloatingFavoritesButton';
 
 function App() {
   return (
